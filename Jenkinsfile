@@ -5,17 +5,17 @@ pipeline {
     stages {
         stage('Dance Party') {
             steps {
-                org.jenkins.bee-shared-utils.danceParty()
+                org.jenkins.beeSharedUtils.danceParty()
             }
         }
         stage('Unleash the Dragons') {
             steps {
-                org.jenkins.bee-shared-utils.unleashTheDragons()
+                org.jenkins.beeSharedUtils.unleashTheDragons()
             }
         }
         stage('Launch Rocket') {
             steps {
-                org.jenkins.bee-shared-utils.launchRocket()
+                org.jenkins.beeSharedUtils.launchRocket()
             }
         }
         stage('Deploy to Kubernetes') {
