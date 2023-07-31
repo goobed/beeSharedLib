@@ -1,4 +1,4 @@
-@Library('bee-shared-lib') _
+@Library('beeSharedLib') _
 
 pipeline {
     agent any
