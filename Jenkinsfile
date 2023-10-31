@@ -1,27 +1,24 @@
-@Library('beeSharedLib') _
-
 pipeline {
     agent any
+
+    triggers {
+        githubPush()
+    }
+
     stages {
-        stage('Dance Party') {
+        stage('Branch Deletion Event') {
+            when {
+                expression { currentBuild.rawBuild.getCause("org.jenkinsci.plugins.github.webhook.GHEventPayload$BranchDeleted") != null }
+            }
             steps {
-                org.jenkins.beeSharedUtils.danceParty()
+                script {
+                    def deletedBranch = currentBuild.rawBuild.getCause("org.jenkinsci.plugins.github.webhook.GHEventPayload$BranchDeleted").getRef()
+                    echo "Deleted Branch: ${deletedBranch}"
+                    
+                    // Add your further steps here based on the deleted branch
+                }
             }
         }
-        stage('Unleash the Dragons') {
-            steps {
-                org.jenkins.beeSharedUtils.unleashTheDragons()
-            }
-        }
-        stage('Launch Rocket') {
-            steps {
-                org.jenkins.beeSharedUtils.launchRocket()
-            }
-        }
-        stage('Deploy to Kubernetes') {
-            steps {
-                deployToK8s(namespace: 'my-k8s-namespace', deploymentName: 'my-app-deployment')
-            }
-        }
+        // Add more stages for other build events if needed
     }
 }
