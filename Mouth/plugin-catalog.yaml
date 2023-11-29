@@ -1,0 +1,9 @@
+type: plugin-catalog
+version: "1"
+name: Mouth
+displayName: Mouth Plugin Catalog
+configurations:
+- description: Exported plugins
+  includePlugins:
+    abap-ci:
+     version: "1.21"

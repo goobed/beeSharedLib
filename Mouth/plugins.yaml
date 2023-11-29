@@ -127,3 +127,5 @@ plugins:
 - id: workflow-scm-step
 - id: workflow-step-api
 - id: workflow-support
+- id: cloudbees-hashicorp-vault
+- id: abap-ci
