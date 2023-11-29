@@ -1,12 +1,4 @@
 jenkins:
-  agentProtocols:
-  - "Diagnostic-Ping"
-  - "JNLP4-connect"
-  - "OperationsCenter2"
-  - "Ping"
-  authorizationStrategy:
-    loggedInUsersCanDoAnything:
-      allowAnonymousRead: false
   crumbIssuer:
     standard:
       excludeClientIPFromCrumb: false
@@ -14,9 +6,6 @@ jenkins:
   disabledAdministrativeMonitors:
   - "com.cloudbees.opscenter.client.cloud.MissingCloudImplMonitor"
   - "hudson.util.DoubleLaunchChecker"
-  labelAtoms:
-  - name: "asdf"
-  - name: "built-in"
   labelString: "asdf"
   markupFormatter: "plainText"
   mode: EXCLUSIVE
@@ -28,17 +17,9 @@ jenkins:
       name: "all"
   projectNamingStrategy: "standard"
   quietPeriod: 5
-  remotingSecurity:
-    enabled: true
   scmCheckoutRetryCount: 0
   securityRealm: "operationsCenter"
   slaveAgentPort: 50000
-  updateCenter:
-    sites:
-    - id: "core-mm-offline"
-      url: "file:/tmp/jenkins/war/WEB-INF/plugins/update-center.json"
-    - id: "cap-core-mm"
-      url: "https://jenkins-updates.cloudbees.com/update-center/envelope-core-mm/update-center.json"
   views:
   - all:
       name: "all"
@@ -60,139 +41,6 @@ advisor:
   - "OtherLogs"
   - "SlaveLaunchLogs"
   nagDisabled: true
-beekeeper:
-  enabled: true
-  securityWarnings:
-    enabledForCore: true
-    enabledForPlugins: true
-  upgrades:
-    autoDowngradePlugins: false
-    autoUpgradePlugins: true
-license:
-  certificate: |
-    -----BEGIN CERTIFICATE-----
-    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
-    FOIznqbbNHEY5uKhTqRMMEoxCzAJBgNVBAYTAlVTMREwDwYDVQQIDAhEZWxhd2Fy
-    ZTEOMAwGA1UEBwwFTGV3ZXMxGDAWBgNVBAoMD0Nsb3VkQmVlcywgSW5jLoIEAS/Q
-    9zCCCRcGCisGAQQBgql/AQcEggkHBIIJAwotLS0tLUJFR0lOIENFUlRJRklDQVRF
-    LS0tLS0KTUlJR2VEQ0NCR0NnQXdJQkFnSUVBUy9ROXpBTkJna3Foa2lHOXcwQkFR
-    c0ZBREJLTVFzd0NRWURWUVFHRXdKVgpVekVSTUE4R0ExVUVDQXdJUkdWc1lYZGhj
-    bVV4RGpBTUJnTlZCQWNNQlV4bGQyVnpNUmd3RmdZRFZRUUtEQTlECmJHOTFaRUps
-    WlhNc0lFbHVZeTR3SGhjTk1qTXhNVEk0TURBd01EQXdXaGNOTWpNeE1qRTBNak0x
-    T1RVNVdqQ0MKQW5ReEVUQVBCZ29yQmdFRUFZS3Bmd0VCRXdFek1UQXdMZ1lLS3dZ
-    QkJBR0NxWDhCQWhNZ01EZzNaalZoWkdVMgpZalJsT1dGbVl6QTFaRE16TW1JeE5X
-    WTJNREJsWkdReEZUQVRCZ3NyQmdFRUFZS3Bmd0VMRGhNRWRISjFaVEVWCk1CTUdD
-    eXNHQVFRQmdxbC9BUXNORXdSMGNuVmxNUlV3RXdZTEt3WUJCQUdDcVg4QkN4QVRC
-    SFJ5ZFdVeEZUQVQKQmdzckJnRUVBWUtwZndFTER4TUVkSEoxWlRFVk1CTUdDeXNH
-    QVFRQmdxbC9BUXNLRXdSMGNuVmxNUlV3RXdZTApLd1lCQkFHQ3FYOEJDd3dUQkhS
-    eWRXVXhGVEFUQmdzckJnRUVBWUtwZndFTEN4TUVkSEoxWlRFVk1CTUdDeXNHCkFR
-    UUJncWwvQVFzUkV3UjBjblZsTVJVd0V3WUxLd1lCQkFHQ3FYOEJDd2NUQkhSeWRX
-    VXhGVEFUQmdzckJnRUUKQVlLcGZ3RUxCaE1FZEhKMVpURVZNQk1HQ3lzR0FRUUJn
-    cWwvQVFzSkV3UjBjblZsTVJVd0V3WUxLd1lCQkFHQwpxWDhCQ3dnVEJIUnlkV1V4
-    RlRBVEJnc3JCZ0VFQVlLcGZ3RUxBeE1FZEhKMVpURVZNQk1HQ3lzR0FRUUJncWwv
-    CkFRc0NFd1IwY25WbE1SVXdFd1lMS3dZQkJBR0NxWDhCQ3dVVEJIUnlkV1V4RlRB
-    VEJnc3JCZ0VFQVlLcGZ3RUwKQkJNRWRISjFaVEVWTUJNR0N5c0dBUVFCZ3FsL0FR
-    c0JFd1IwY25WbE1SVXdFd1lMS3dZQkJBR0NxWDhCQ3hRVApCSFJ5ZFdVeEZUQVRC
-    Z3NyQmdFRUFZS3Bmd0VMRlJNRWRISjFaVEVUTUJFR0Npc0dBUVFCZ3FsL0FRTVRB
-    ekV3Ck1ERVZNQk1HQ2lzR0FRUUJncWwvQVE0VEJURXdNREF3TVJVd0V3WUtLd1lC
-    QkFHQ3FYOEJDUk1GWm1Gc2MyVXgKRWpBUUJnTlZCQU1UQ1VOc2IzVmtRbVZsY3pF
-    Sk1BY0dBMVVFQ3hNQU1SWXdGQVlMS3dZQkJBR0NxWDhCQ3hnVApCV1poYkhObE1J
-    SUJJakFOQmdrcWhraUc5dzBCQVFFRkFBT0NBUThBTUlJQkNnS0NBUUVBdUcvZXht
-    akNQMjRrCjJucjRCd0l3T0ZUN0NKZERiaXJDdmFYRjdEUEdpRkV6K1FWZG1vb3ZB
-    clpDeHpzSE5CR2FCWFRZR09QMnZYaXkKblkrUWxqYWdPcXhRa3I5aEdINkR0aW9D
-    YW1JbkdteTQrbGVtU1lkWGxaOUgwWTMvNW1HY2t3NHdtU200ZUFNaQpmeFRFL0V0
-    RHlrdzJLbjhGZkVpc1lkcW1tZXNFcHZrUzZGQ0xySEwvYkJlUXgzNzcvYzRUaXkx
-    ekEwclB6dXVQCmw1WXVSZVVtRWpUODQxdXlTaURtamFVNzBpaVFBSWxMWTJwTTNF
-    QTZUb29OOVVsakkwWTBSUDRmbXZqL09kblEKOVIvdkFjeGE0QkhOOXNqQUd1elBD
-    VG1RMmZvYWRUcE1xTm9OYm5sb0hRWmVhWkRGY1pwR0RRWC9qdnZBSnBhUwo4ZUVq
-    MWxVWkR3SURBUUFCb3pvd09EQU1CZ05WSFJNRUJUQURBUUgvTUIwR0ExVWREZ1FX
-    QkJSU25vUlVWZWZ2Cnp4UVU0ak9lcHRzMGNSam00akFKQmdOVkhTTUVBakFBTUEw
-    R0NTcUdTSWIzRFFFQkN3VUFBNElDQVFCV3hjSWcKRXVhSmcwY3VGbm05UEZOazdr
-    dy95ZTgvdE0yaTJFNFF4RjJxVS8yeW1lZXdFRGVZUHMzVEtEODVvN3hScWJJZQo0
-    THZ5MThMQlNlcFMyT01tRWhPaUwwQmNYTlUySE8zNGdoVVNUbHlxNmNtYVloMnNF
-    cnpxOVpDNUltRjNyUmFoClN3MkRORHRQTzhoam5oQjVtM2cyalRNVFZIN084N1RK
-    ZEtGVTVFcmMxL1JwTXl0eGNyQldYSEFvWlc3TlhoYU4KZnRvWmNqcEhnK3h0eFJ1
-    TEVXS21idWRDZGVSbFArWHB5MjEvY2Q4akNQTXdYaDVCSUlYOVhtQ3ZGa1doNWQ3
-    cQp0c2FwUFR1NEpnZ2pLVWlldnpxUWlNNm5jK1RCQmR4Y3hkZjhFYW5Ud0NDOFZw
-    cm02bFRUYzBNNGhGRWdnTHNzCi9VbzhkSVI1eFBnMU1DeC80K2RjK1ZONFpxaXNR
-    ZENRQUU1Z3RGQjA3UFV2NlpnZTdYS2hUTXFIb3VHdkw0a2kKWXZqcEhlaWxoVjJU
-    L0I5MXIya052ZElvZmlKYklObmRCaWdkMXd0Nlh1NkRuSFNoZWNQUmpqRkRlL2pO
-    U2VHSQpCTUpBZytLNFF0OUpIc0V1NzJ3L0tkcEh2QngwZWwrLzRtYmpLYjYrdDQx
-    aFBYVXA0cWpuQ1F2OVp2b1REdUwrCjMrZDFGamJJVVZIcFBScE9SV1JhRFJsQU9z
-    b2ZNMWJNT09kZ0FiOUNGWXE2UERLNHQ5MzdIcEo2SWVJWGZYcG4KNkYyMllGbFZJ
-    Wml4ZW1jTGhScGtsRzJZSUdDeVcyNW1UQ2pvaGxxWnd3cXBZUytjWGhmUExHNnVY
-    ZHEweHpxRAptUzZ0eDI5RlQ1aWMxQVlmYUJWdkhoRkFiNUdOdjZQQW53Q3FrUT09
-    Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0KCjANBgkqhkiG9w0BAQUFAAOCAQEA
-    XAXBVAoFLiku+cUXmEFdhR6cAyGLRXAWJxCxdXzNqyqpa7h4YJATUR41hCf5SuXY
-    clCUiJGA93nbY+/Lotzs22/4EEzPs2VXX7xWil6v8cjY33gz9s6aG0FoloRWmKsV
-    mXkIqlc70QJWZ2GkDQfu9y4lSyNRU5Va4sDwhEMq6jN6qKuT2rU8JSJ8evMkq5ou
-    UswagZJZmd6o/6lRJzrpKDxCiEkGI8HvkooD72oBBh7RamkFpc1ze2hbZqBach9J
-    M5PJgxerThR4sgtDm3RrKmIKefWnqoq84L44ySogBcmXD6T+HMLniQuLFwxD83TA
-    m99/vb3Okdnu8w9wVp23XA==
-    -----END CERTIFICATE-----
-  key: |
-    -----BEGIN RSA PRIVATE KEY-----
-    MIIEpAIBAAKCAQEAiuiiVbAmxBT6khWbP3vn1WmvRo+NK5Ib0omAfgvBhJRG+74u
-    wuD85nwg6bDDmIsG51LDJNWY3smI/WAbf9w1TQ4ANyQLfpFQjQCpnOjqvtDkcdee
-    pEJ6cKzg7eKpIyla7m2Z7tlAuT0+TIzxH89xXe/zrEvfJI3as+qxnsbGji960r1L
-    sZnC3cfZj/OVJ9oXu3b45jUwxRGKZNjU50BfY/uOMLqWEhG4xWVZyy2zocZyjjer
-    dxXGNl+Fs4GhdeJboMkyvHNnZ4s2LIKGzyWbWxDCeiBIDWi71PcvOixvROYQxuoM
-    B3KjzMpm2C9CMq4jinN76U3e7QdzY1AEuLKtAwIDAQABAoIBAGOr8zeK8vYFm5oQ
-    2NnfnYU7lSILRR97cm1KbqGC6/OmtZxTZZg9+hmj/bXROTgOogCAGTgn784ETECK
-    opDHQJOutSbbvUevG15hmFLXqgELQLATKGjyroqE8cyfs/9f4Dhu+mIxD0kbkcU5
-    6JaLsevWjkEWG+JNyx0IDTVBqh1BE1wl95PNXQMXK1Cu1th5ujo2Ajm1ICvc6IAA
-    1/E8ukyUpwEdk1S7uEpToD5dJMoQmHIiFl29KnpwS/JgsMSVTMHA3Lqz4Ydblhwk
-    BwYG7P+0Kk2E6wCbcG17/CZ1QV5fu6U0cNRsl14G4mBi5CE4I6kcVbIPHrNsB/ut
-    xxglySECgYEAxvwT//XBSlEwEWkAbbnRgDU0NyqWKF9FSpV/pmb98CDmukqLhmDG
-    2RGCJIaQYS8Dgk6CGcmeXMcxYtDDK5Ovc2XREjEL6WpkRvwgqaqbQ1grd3t8VYJO
-    MkkhFQP1lDbV/SijHVR8MM2FtXy9jDvz6zF+vTg5F4WcE0EYGpl28xECgYEAsrXd
-    iuUyp+BH+5ZITglNPcKWw82ZvfJewP0x8/6uCqEvYqld4chIJtlTZgje9V9hCa3J
-    p4T/u1AaJko5TplMjpiVuGelM/0MS3LO42AvJxVcS/4d2aJ2CdO3LAyPibgt2AYr
-    Ef4hREeRTB7oCtVyg3d4HO3dC6KRqnHU3SC29tMCgYEArVA+M0DgXFSeo2trfibM
-    /PhaRHqJUxy4A6B3EH7AS3i8viHTqPV9/O8tBZdXBe6nBcZPtxpPHsw4jbL7a2c0
-    +DQEh+3ETEfok5Ni96Srm1qecXFS+D+I0G+1qtJKAhBJDjlo6VD+4psADPVbO1u0
-    tnPjyffAcmZjbLnTvsdQPaECgYEAlJsYs6QtwF2HXhU04PdpLJ9AQWgZnVMLKg4h
-    2NSCI0KvpapS8CpcnTmA2UstI/uBNMw38L5u7XMJm6eDCfH+MGF/ts0xGg8lhyPc
-    GEVmUGi5zFNuvQgUgc109wMm5Q2ryYQvkpGxVhbxIsxcho3B4MKateuyMTepS4PG
-    z26h1pMCgYBE/tbr3Q6WkE3xIWjjHZwrMOwkQHpKA0xVdXJ71eu5B0gQYWwOTEH8
-    AtHf3D5uxZZ6+mtIH6GYPSV0s+n8FyjFwx8DRfVLXdW1/8yEkRD8jsVoZZmqvOEm
-    VtP77zPE5o7xZAcOpZzw0bsB2SMGdYmZvC1G02gA++Nbj6CQF56+lw==
-    -----END RSA PRIVATE KEY-----
 support:
   automatedBundleConfiguration:
     componentIds:
@@ -248,10 +96,6 @@ support:
     - "PipelineThreadDump"
     enabled: true
     period: 1
-globalCredentialsConfiguration:
-  configuration:
-    providerFilter: "none"
-    typeFilter: "none"
 security:
   anonymizeSupportBundle:
     enabled: false
@@ -314,8 +158,6 @@ unclassified:
     storage: "file"
   gitHubConfiguration:
     apiRateLimitChecker: ThrottleForNormalize
-  gitHubPluginConfig:
-    hookUrl: "http://shinobi.127.0.0.1.beesdns.com/mouth/github-webhook/"
   globalDefaultFlowDurabilityLevel:
     durabilityHint: PERFORMANCE_OPTIMIZED
   globalLibraries:
@@ -339,9 +181,6 @@ unclassified:
     injectMavenExtension: false
   junitTestResultStorage:
     storage: "file"
-  location:
-    adminAddress: "Tester <test@test.com>"
-    url: "http://shinobi.127.0.0.1.beesdns.com/mouth/"
   mailer:
     charset: "UTF-8"
     useSsl: false
