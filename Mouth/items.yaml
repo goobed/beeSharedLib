@@ -1,0 +1,85 @@
+removeStrategy:
+  rbac: SYNC
+  items: NONE
+items:
+- kind: folder
+  name: EphemeralAgents
+  description: ''
+  displayName: EphemeralAgents
+  items:
+  - kind: pipeline
+    name: pod-templates
+    concurrentBuild: true
+    definition:
+      cpsScmFlowDefinition:
+        scriptPath: Jenkinsfile
+        scm:
+          scmGit:
+            userRemoteConfigs:
+            - userRemoteConfig:
+                url: https://github.com/goobed/beeSharedLib.git
+            branches:
+            - branchSpec:
+                name: '*/main'
+        lightweight: true
+    description: ''
+    disabled: false
+    displayName: pod-templates
+    resumeBlocked: false
+  - kind: pipeline
+    name: Yaml-example
+    concurrentBuild: true
+    definition:
+      cpsScmFlowDefinition:
+        scriptPath: Jenkinsfile2
+        scm:
+          scmGit:
+            userRemoteConfigs:
+            - userRemoteConfig:
+                url: https://github.com/goobed/beeSharedLib.git
+            branches:
+            - branchSpec:
+                name: '*/main'
+        lightweight: true
+    description: ''
+    disabled: false
+    displayName: Yaml-example
+    resumeBlocked: false
+  - kind: pipeline
+    name: Yaml-file-example
+    concurrentBuild: true
+    definition:
+      cpsFlowDefinition:
+        sandbox: true
+        script: |
+          pipeline {
+              agent any
+
+              stages {
+                  stage('Hello') {
+                      steps {
+                          echo 'Hello World'
+                      }
+                  }
+              }
+          }
+    description: ''
+    disabled: false
+    displayName: Yaml-file-example
+    resumeBlocked: false
+  properties:
+  - envVars: {}
+  - itemRestrictions:
+      filter: false
+- kind: freeStyle
+  name: simpleFreeboy
+  blockBuildWhenDownstreamBuilding: false
+  blockBuildWhenUpstreamBuilding: false
+  concurrentBuild: false
+  description: ''
+  disabled: false
+  displayName: simpleFreeboy
+  scm:
+    none: {}
+  scmCheckoutStrategy:
+    standard: {}
