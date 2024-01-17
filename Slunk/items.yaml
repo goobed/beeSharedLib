@@ -1,0 +1,19 @@
+removeStrategy:
+  rbac: SYNC
+  items: NONE
+items:
+- kind: pipeline
+  name: test-agents
+  concurrentBuild: true
+  definition:
+    cpsFlowDefinition:
+      sandbox: true
+      script: "pipeline {\n    agent {        \n        label 'linux'\n    }\n    stages\
+        \ {\n        stage('test-agents') {\n            steps {\n                echo\
+        \ 'Testing agents'\n                sh 'cat /etc/os-release'\n             \
+        \   sh 'sleep 5'\n                sh 'java -version'\n            }\n      \
+        \  }\n    }\n}\n"
+description: ''
+disabled: false
+displayName: test-agents
+resumeBlocked: false
