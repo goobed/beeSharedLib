@@ -1,5 +1,5 @@
 type: plugin-catalog
-version: "2"
+version: "1"
 name: Slunk
 displayName: Slunk Plugin Catalog
 configurations:
