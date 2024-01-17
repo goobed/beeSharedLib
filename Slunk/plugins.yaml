@@ -1,5 +1,6 @@
 plugins:
 - id: ace-editor
+- id: ant
 - id: apache-httpcomponents-client-4-api
 - id: authentication-tokens
 - id: aws-credentials
