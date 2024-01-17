@@ -1,0 +1,9 @@
+type: plugin-catalog
+version: "1"
+name: Slunk
+displayName: Slunk Plugin Catalog
+configurations:
+- description: Exported plugins
+  includePlugins:
+    gitea:
+      version: 1.4.5
