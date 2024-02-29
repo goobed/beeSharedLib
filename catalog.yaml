@@ -2,4 +2,4 @@ version: 1
 type: pipeline-template-catalog
 
 name: skooterCatalog
-displayName: Shared Template Catalog for Teams Working on the Customer Portal
+displayName: Shared Template for All Replicas
