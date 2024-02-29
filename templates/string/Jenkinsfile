@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+    
+    parameters {
+        string defaultValue: 'myTest', name: 'testParam'
+    }
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World!'
+                echo "Hello ${aParam}"
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+version: 1
+type: pipeline-template
+name: A template with one of each parameter
+parameters:
+  - name: aParam
+    type: string
+    displayName: A string parameter
+
+  - name: intParam
+    type: number
+    displayName: A number parameter
+ 
+  - name: boolParam
+    type: boolean
+    displayName: A boolean parameter
+  
+  - name: credParam
+    type: credentials
+    displayName: A credentials parameter
