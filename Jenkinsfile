@@ -1,0 +1,3 @@
+@Library('beeSharedLib') _
+
+myFunction()
