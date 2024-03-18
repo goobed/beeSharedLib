@@ -2,4 +2,4 @@ version: 1
 type: pipeline-template-catalog
 
 name: skooterCatalog
-displayName: Shared Template for All Replicas
+displayName: Shared Template for beeSharedLib repo
